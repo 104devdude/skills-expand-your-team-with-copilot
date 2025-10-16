@@ -1,0 +1,114 @@
+name: 📊 Data Management
+description: Request bulk data operations, imports, exports, or data cleanup
+title: "[Data]: "
+labels: ["enhancement", "data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for requests related to managing data in bulk (importing, exporting, cleaning up, or restructuring data).
+  
+  - type: dropdown
+    id: operation
+    attributes:
+      label: Type of Data Operation
+      description: What do you need to do with the data?
+      options:
+        - Import data from file (CSV, Excel, etc.)
+        - Export data to file
+        - Bulk update existing data
+        - Data cleanup or correction
+        - Data migration or restructuring
+        - Generate report
+        - Other
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: data-type
+    attributes:
+      label: What type of data?
+      description: Which data are you working with?
+      options:
+        - Activities
+        - Student registrations
+        - Teacher accounts
+        - Schedule information
+        - Multiple types
+        - Other
+    validations:
+      required: true
+  
+  - type: textarea
+    id: description
+    attributes:
+      label: Detailed Description
+      description: What exactly needs to be done with the data?
+      placeholder: |
+        Example: We need to import 25 new activities for the spring semester from an Excel spreadsheet. The spreadsheet has columns for Activity Name, Description, Days, Start Time, End Time, and Max Participants.
+    validations:
+      required: true
+  
+  - type: textarea
+    id: data-source
+    attributes:
+      label: Data Source or Format
+      description: Where is the data coming from or what format is it in?
+      placeholder: |
+        Example: Excel file with these columns:
+        - Activity Name
+        - Description
+        - Schedule (text)
+        - Days (comma-separated)
+        - Start Time (HH:MM format)
+        - End Time (HH:MM format)
+        - Max Participants (number)
+  
+  - type: textarea
+    id: special-handling
+    attributes:
+      label: Special Handling Required
+      description: Any special rules, validations, or transformations needed?
+      placeholder: |
+        Example: 
+        - Skip any activities with empty names
+        - Default Max Participants to 15 if not specified
+        - Convert 12-hour time format to 24-hour format
+        - Check for duplicate activity names before importing
+    validations:
+      required: true
+  
+  - type: input
+    id: deadline
+    attributes:
+      label: Deadline
+      description: When is this needed by? (if applicable)
+      placeholder: "Example: Before the start of spring semester (February 1st)"
+  
+  - type: textarea
+    id: backup
+    attributes:
+      label: Backup Requirements
+      description: Should existing data be backed up first?
+      placeholder: |
+        Example: Yes, please export current activities to a backup file before importing new ones.
+  
+  - type: checkboxes
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: What needs to be true when this is complete?
+      options:
+        - label: Data operation completes successfully
+        - label: Data is validated and accurate
+        - label: No existing data is lost or corrupted
+        - label: Confirmation/summary of the operation is provided
+        - label: Data is immediately usable in the application
+  
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Any other information that might be helpful
+      placeholder: |
+        Example: This is urgent because we need to open registration for spring activities next week.

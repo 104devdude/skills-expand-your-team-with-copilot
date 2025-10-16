@@ -1,0 +1,129 @@
+name: 🎨 UI/Design Enhancement
+description: Request changes to the visual design, layout, or user interface
+title: "[UI]: "
+labels: ["enhancement", "ui"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to request visual or design changes to the application.
+  
+  - type: dropdown
+    id: change-type
+    attributes:
+      label: Type of UI Change
+      description: What kind of visual change are you requesting?
+      options:
+        - Color scheme / Branding
+        - Layout / Spacing
+        - Typography / Fonts
+        - Icons / Images
+        - Animations / Effects
+        - Responsive design / Mobile view
+        - Accessibility improvements
+        - Overall redesign
+        - Other
+    validations:
+      required: true
+  
+  - type: textarea
+    id: current-state
+    attributes:
+      label: Current State
+      description: What does it look like now?
+      placeholder: |
+        Example: The website currently uses blue colors, but our school colors are white and lime green.
+    validations:
+      required: true
+  
+  - type: textarea
+    id: desired-state
+    attributes:
+      label: Desired State
+      description: What should it look like? Be specific about colors, sizes, positions, etc.
+      placeholder: |
+        Example: 
+        - Primary color should be lime green (#32CD32)
+        - Secondary color should be white
+        - Add school mascot images from https://octodex.github.com/
+        - Background should have subtle animated branch lines
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part of the application?
+      description: Where should this change be applied?
+      options:
+        - Entire application
+        - Header / Navigation
+        - Activity cards
+        - Sidebar / Filters
+        - Footer
+        - Specific page (specify in details)
+        - Other
+    validations:
+      required: true
+  
+  - type: textarea
+    id: reason
+    attributes:
+      label: Why is this change needed?
+      description: What problem does this solve or what improvement does this bring?
+      placeholder: |
+        Example: Using school colors will create better brand consistency and school pride. Students and parents will immediately recognize this as our school's website.
+    validations:
+      required: true
+  
+  - type: textarea
+    id: references
+    attributes:
+      label: Visual References
+      description: Links to examples, color codes, fonts, or attach mockups/screenshots
+      placeholder: |
+        Example:
+        - Primary color: #32CD32 (Lime Green)
+        - Secondary color: #FFFFFF (White)
+        - Mascot examples: https://octodex.github.com/
+        - Attach any mockups or screenshots here
+  
+  - type: dropdown
+    id: devices
+    attributes:
+      label: Which devices should this work on?
+      description: Where should this change be visible?
+      multiple: true
+      options:
+        - Desktop
+        - Tablet
+        - Mobile phone
+        - All devices
+    validations:
+      required: true
+  
+  - type: checkboxes
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: What needs to be true when this is complete?
+      options:
+        - label: Visual changes match the description
+        - label: Design is consistent across all affected pages
+        - label: Changes work on all required devices
+        - label: Text remains readable and accessible
+        - label: No existing functionality is broken
+  
+  - type: textarea
+    id: accessibility
+    attributes:
+      label: Accessibility Considerations
+      description: Any specific accessibility requirements? (color contrast, screen readers, etc.)
+      placeholder: |
+        Example: Ensure lime green on white has sufficient contrast for readability
+  
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Any other information that might be helpful

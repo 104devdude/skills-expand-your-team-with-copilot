@@ -1,0 +1,84 @@
+name: 🐛 Bug Report
+description: Report a problem with the application
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this issue! Please fill out the information below to help us fix it.
+  
+  - type: textarea
+    id: description
+    attributes:
+      label: Problem Description
+      description: What is going wrong? Be as specific as possible.
+      placeholder: |
+        Example: When I try to sign up a student for Chess Club, I get an error message saying "Activity not found" even though Chess Club is visible in the list.
+    validations:
+      required: true
+  
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: What steps did you take that led to this problem?
+      placeholder: |
+        1. Go to the activities page
+        2. Click on "Chess Club"
+        3. Enter student email "john@mergington.edu"
+        4. Click "Sign Up"
+        5. Error appears
+    validations:
+      required: true
+  
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should happen instead?
+      placeholder: |
+        Example: The student should be successfully added to the Chess Club participants list and see a confirmation message.
+    validations:
+      required: true
+  
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happens?
+      placeholder: |
+        Example: An error message appears and the student is not added to the activity.
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which area is affected?
+      options:
+        - Student Sign-up/Registration
+        - Activity Display/Filtering
+        - Teacher Login/Authentication
+        - Activity Information
+        - User Interface/Layout
+        - Other
+    validations:
+      required: true
+  
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Any other information that might be helpful (screenshots, error messages, etc.)
+      placeholder: Add any screenshots, error messages, or other relevant information here.
+  
+  - type: checkboxes
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: Check the boxes for what needs to be fixed
+      options:
+        - label: The bug is fixed and no longer occurs
+        - label: The fix doesn't break other existing functionality
+        - label: Similar issues in related areas are also checked
