@@ -32,7 +32,7 @@ A comprehensive web application that allows teachers to manage student registrat
 - **Backend**: FastAPI (Python)
 - **Database**: MongoDB
 - **Frontend**: Vanilla JavaScript, HTML5, CSS3
-- **Authentication**: SHA-256 password hashing
+- **Authentication**: Password-based authentication system
 
 ## Development Guide
 
