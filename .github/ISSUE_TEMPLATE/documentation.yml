@@ -1,0 +1,100 @@
+name: 📝 Documentation Update
+description: Request updates to documentation, help text, or instructional content
+title: "[Docs]: "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to request changes to documentation, instructions, or help text in the application.
+  
+  - type: dropdown
+    id: doc-type
+    attributes:
+      label: Type of Documentation
+      description: What kind of documentation needs updating?
+      options:
+        - README or setup instructions
+        - User guide or how-to
+        - Help text in the application
+        - Error messages
+        - API documentation
+        - Comments in code
+        - Other
+    validations:
+      required: true
+  
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: Where is this documentation? (file name, page, section)
+      placeholder: "Example: docs/how-to-develop.md or Help text on the Activities page"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong with the current documentation?
+      description: Describe the issue with the existing documentation
+      placeholder: |
+        Example: The setup instructions mention Python 2.7 but we're using Python 3.9. This is confusing for new teachers trying to set up the development environment.
+    validations:
+      required: true
+  
+  - type: textarea
+    id: solution
+    attributes:
+      label: What should it say instead?
+      description: Provide the correct or updated information
+      placeholder: |
+        Example: Update to say "Python 3.9 or higher" and include steps for verifying Python version with "python --version"
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: audience
+    attributes:
+      label: Who is the audience?
+      description: Who will be reading this documentation?
+      options:
+        - Teachers
+        - Students
+        - Developers/Technical staff
+        - School administrators
+        - All users
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: priority
+    attributes:
+      label: How important is this update?
+      description: Help us prioritize the documentation update
+      options:
+        - Critical - Current docs are incorrect and causing problems
+        - High - Information is missing and commonly needed
+        - Medium - Could be clearer or more complete
+        - Low - Minor improvement or nice to have
+    validations:
+      required: true
+  
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Any other information that might be helpful
+      placeholder: |
+        Example: Several teachers have asked about this in recent weeks
+  
+  - type: checkboxes
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: What needs to be true when this is complete?
+      options:
+        - label: Documentation is accurate and up-to-date
+        - label: Information is clear and easy to understand
+        - label: Examples or screenshots are provided if needed
+        - label: Related documentation is also updated for consistency

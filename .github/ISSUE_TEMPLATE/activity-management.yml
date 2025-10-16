@@ -1,0 +1,87 @@
+name: 🎯 Activity Management
+description: Add, update, or remove extracurricular activities
+title: "[Activity]: "
+labels: ["enhancement", "activity"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to request changes to activities (add new, update existing, or remove activities).
+  
+  - type: dropdown
+    id: action
+    attributes:
+      label: What type of change?
+      description: Select what you want to do with an activity
+      options:
+        - Add a new activity
+        - Update an existing activity
+        - Remove an activity
+        - Bulk update multiple activities
+    validations:
+      required: true
+  
+  - type: input
+    id: activity-name
+    attributes:
+      label: Activity Name
+      description: Name of the activity (existing name if updating/removing, desired name if adding)
+      placeholder: "Example: Chess Club, Science Olympiad, Basketball Team"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: description
+    attributes:
+      label: Activity Description
+      description: What is this activity about? (Skip if removing)
+      placeholder: |
+        Example: Learn strategies and compete in chess tournaments
+  
+  - type: textarea
+    id: schedule
+    attributes:
+      label: Schedule Information
+      description: When does this activity meet? Include days and times. (Skip if removing)
+      placeholder: |
+        Example: Mondays and Fridays, 3:15 PM - 4:45 PM
+  
+  - type: input
+    id: max-participants
+    attributes:
+      label: Maximum Participants
+      description: Maximum number of students allowed (Skip if removing)
+      placeholder: "Example: 15"
+  
+  - type: textarea
+    id: additional-fields
+    attributes:
+      label: Additional Information or Changes
+      description: Any other details, requirements, or specific changes needed?
+      placeholder: |
+        Example: 
+        - This activity should be marked as "Beginner" level
+        - Add prerequisite: Students must have completed Programming 101
+        - Change meeting location to Room 204
+  
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason for Change
+      description: Why is this change needed?
+      placeholder: |
+        Example: Several students have requested an advanced chess club for experienced players.
+    validations:
+      required: true
+  
+  - type: checkboxes
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: Check what needs to be true when this is complete
+      options:
+        - label: Activity information is accurately displayed on the activities page
+        - label: Schedule information is correct and clear
+        - label: Students can sign up for the activity (if applicable)
+        - label: Maximum participant limit is enforced
+        - label: Activity appears in the correct filters/categories

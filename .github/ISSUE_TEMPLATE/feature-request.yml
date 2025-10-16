@@ -1,0 +1,100 @@
+name: ✨ Feature Request
+description: Suggest a new feature or enhancement to the application
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a new feature! Please provide as much detail as possible to help us understand your request.
+  
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe the problem or limitation you're experiencing
+      placeholder: |
+        Example: Teachers cannot currently filter activities by difficulty level, making it hard to recommend appropriate activities to students of different skill levels.
+    validations:
+      required: true
+  
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: How would you like this to work? Describe your ideal solution.
+      placeholder: |
+        Example: Add a "Difficulty Level" filter in the sidebar with options for Beginner, Intermediate, and Advanced. Activities should be tagged with their difficulty level.
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: feature-area
+    attributes:
+      label: Which area of the application?
+      description: Where should this feature be added?
+      options:
+        - Activity Filtering/Search
+        - Activity Display/Cards
+        - Student Management
+        - Data Export/Reports
+        - User Interface/Layout
+        - New Page/Section
+        - Other
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: priority
+    attributes:
+      label: How important is this feature?
+      description: Help us understand the priority
+      options:
+        - Critical - Blocking important workflows
+        - High - Would significantly improve daily tasks
+        - Medium - Nice to have, would be helpful
+        - Low - Minor improvement
+    validations:
+      required: true
+  
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative Solutions
+      description: Have you considered any other approaches to solving this problem?
+      placeholder: |
+        Example: Instead of filtering, we could group activities by difficulty level on the page.
+  
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples or Mockups
+      description: If you have examples from other applications or sketches/mockups, describe them here or attach screenshots
+      placeholder: |
+        Example: Similar to how Netflix categorizes content by age rating, we could categorize activities by difficulty.
+  
+  - type: checkboxes
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: What needs to be true when this feature is complete?
+      options:
+        - label: Feature works as described in the solution
+        - label: Feature is easy to use and intuitive
+        - label: Feature doesn't break existing functionality
+        - label: Documentation is updated if needed
+  
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Limitations or Constraints
+      description: Are there any limitations or constraints we should be aware of?
+      placeholder: |
+        Example: Some older activities don't have difficulty information, so they should default to "All Levels"
+  
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Any other information that might be helpful
+      placeholder: Add any additional context, screenshots, or information here.
